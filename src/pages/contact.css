@@ -1,0 +1,37 @@
+.contact-us-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    height: 100%;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
+  
+  .contact-form label {
+    margin-bottom: 8px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 8px;
+    margin-bottom: 16px;
+    font: 200;
+    font-size: 18px;
+  }
+  
+  .contact-form button{
+    align-self: center;
+    padding: 15px;
+    color: #fff;
+    background-color: goldenrod;
+    width: 200px;
+    border: none;
+    cursor: pointer;
+  }
+  

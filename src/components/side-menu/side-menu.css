@@ -1,0 +1,86 @@
+.nav-menu{
+    background-color: #060b26;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    padding: 10px;
+    top: 0;
+    transition: 850ms;
+}
+
+.toggle-menu{
+    cursor: pointer;
+}
+
+.top{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    color: #f5f5f5;
+}
+
+.user-menu{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.nav-menu.active{
+    left: 0;
+    transition: 350ms;
+}
+
+.nav-text{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 8px 0px 8px 16px;
+    list-style: none;
+    height: 60px;
+    cursor: pointer;
+}
+
+.nav-text:hover{
+    background-color: #1a83ff;
+}
+
+.nav-menu-items{
+    width: 100%;
+}
+
+.toggle-theme{
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f5f5f5;
+    margin-top: 20px;
+    background-color: goldenrod;
+    width: 100px;
+    border-radius: 20px;
+}
+
+.light{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    background-color: #f5f5f5;
+    color: #060b26;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.dark{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    background-color: black;
+    color: #f5f5f5;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 20px;
+}

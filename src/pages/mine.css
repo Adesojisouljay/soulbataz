@@ -1,0 +1,46 @@
+.mining-container {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .mining-title {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .input-container {
+    margin-bottom: 10px;
+  }
+  
+  input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .start-mining-button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .start-mining-button:hover {
+    background-color: #45a049;
+  }
+  
+  .mining-stats {
+    margin-top: 20px;
+  }
+  
+  .mining-stats p {
+    margin: 5px 0;
+  }
+  
