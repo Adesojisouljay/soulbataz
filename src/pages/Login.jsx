@@ -32,7 +32,7 @@ export const Login = () => {
       console.log(data);
       if (!data.error) {
         dispatch(loginSuccess(data))
-        localStorage.setItem('token', data.accessToken);
+        localStorage.setItem('soulbataz_token', data.accessToken);
         navigate('/products');
       }
     } catch (error) {

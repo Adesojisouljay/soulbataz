@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const BASE_URL = 'http://localhost:9000/api';
-const token = localStorage.getItem("token")
+const token = localStorage.getItem("soulbataz_token")
 
 export const registerUser = async (userData) => {
   try {
