@@ -5,6 +5,7 @@ import { addItemToCart } from '../redux/cartSlice';
 import { CheckoutModal } from '../components/payment-modal/PaymentModal';
 import { initializePaystack } from '../api/paystack';
 import { getAllProducts, addProductToCart, createPaymentRecord } from '../api/soulbataz';
+import { handlePayment } from '../api/paystack';
 import { useSelector } from 'react-redux';
 import './products.css';
 
@@ -64,37 +65,6 @@ export const Products = () => {
 
   const filterProducts = (category) => {
     setSelectedCategory(category);
-  };
-
-  const handlePayment = async (product) => {
-    try {
-      const paymentResponse = await initializePaystack(product.price?.replace(",", ""));
-      console.log('Payment response:', paymentResponse);
-  
-      if (paymentResponse.status === 'success') {
-        
-        const paymentData = {
-          amount: parseFloat(product.price.replace(",", "")),
-          product: {
-            productId: product._id,
-            quantity: 1,
-            totalAmount: parseFloat(product.price.replace(",", ""))
-          },
-          payment: {
-            paymentReference: paymentResponse.reference,
-            transactionId: paymentResponse.transaction,
-            paymentStatus: paymentResponse.status,
-            paymentMessage: paymentResponse.message,
-            redirectUrl: paymentResponse.redirecturl
-          }
-        };
-  
-        const response = await createPaymentRecord(paymentData);
-        console.log('Payment record created:', response);
-      }
-    } catch (error) {
-      console.error('Error handling payment:', error);
-    }
   };
   
   const filteredProducts = selectedCategory === 'All' ? footwearArray : footwearArray.filter(product => product.category === selectedCategory);

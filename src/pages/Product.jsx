@@ -3,6 +3,7 @@ import { fillStartSvg } from '../components/images/svg';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { getAllProducts } from '../api/soulbataz';
+import { handlePayment } from '../api/paystack';
 import './product.css';
 
 export const Product = () => {
@@ -87,7 +88,7 @@ export const Product = () => {
                         </div>
                         <div className="action-contact">
                             <div className="info-action">
-                                <button className='action-button'>Buy Now</button>
+                                <button className='action-button' onClick={()=> handlePayment(selectedProduct)}>Buy Now</button>
                                 <button className='action-button'>Add to cart</button>
                             </div>
                             <div className="contact-purchase">

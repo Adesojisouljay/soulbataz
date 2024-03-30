@@ -9,6 +9,7 @@ import {  clearCart } from '../../redux/cartSlice'
 import logo from "../../assets/soulogo.png"
 import { getAllUserCarts, removeItemFromCart, clearUserCart } from '../../api/soulbataz'
 import { initializePaystack } from '../../api/paystack'
+import { handlePayment } from '../../api/paystack'
 
 export const NavBar = () => {
     const dispatch = useDispatch()
@@ -80,9 +81,6 @@ export const NavBar = () => {
                 </div>
                 <div className="log">
                     {globalState?.user.user ? (<div className="cart-wrapper" ref={cartRef}>
-                        <div className='new-order'>
-                            <span>New order</span>
-                        </div>
                         <div className='cart-svg' onClick={toggleCartDropdown}>{cartSvg}</div>
                         <div className='cart-count'>{cartItems.length}</div>
                         {showCartDropdown && (
@@ -105,7 +103,7 @@ export const NavBar = () => {
                                                         <span>Total: {item.totalAmount}</span>
                                                     </div>
                                                     <div className="cart-produtc-btn">
-                                                        <button onClick={() => initializePaystack(item.totalAmount)}>Pay now</button>
+                                                        <button onClick={() => handlePayment(item)}>Pay now</button>
                                                         <span onClick={() => removeCartItem(item._id)}>{deleteSvg}</span>
                                                     </div>
                                                 </div>
